@@ -6,16 +6,13 @@ const initilaGameBoard = [
     [null, null, null],
 ];
 
-const GameBoard = ({ setActivePlayer, playerSymbol}) => {
-    const [gameBoard, setGameBoard] = useState(initilaGameBoard);
+const GameBoard = ({ setGameTurn, gameTurns, playerSymbol }) => {
+    let gameBoard = initilaGameBoard;
+    for (let i = gameTurns.length-1; i >= 0; i--) {
+        const { square, playerName } = gameTurns[i];
+        const { rowIndex, colIndex } = square;
 
-    const handleClick = (row, column) => {
-        setGameBoard((oldGameBoard) => {
-            const newGameBoard = [...oldGameBoard.map(innerArray => [...innerArray])];
-            newGameBoard[row][column] = playerSymbol;
-            return newGameBoard;
-        });
-        setActivePlayer();
+        gameBoard[rowIndex][colIndex] = playerName;
     }
 
     return (
@@ -27,7 +24,7 @@ const GameBoard = ({ setActivePlayer, playerSymbol}) => {
                             <li key={ colIndex }>
                                 <button
                                     style={ { height: "50px", width: "50px", margin: "5px" } }
-                                    onClick={ () => handleClick(rowIndex, colIndex) }
+                                    onClick={ () => setGameTurn(rowIndex, colIndex) }
                                     disabled={ gameBoard[rowIndex][colIndex] !== null }
                                 >
                                     { playerSymbol }
