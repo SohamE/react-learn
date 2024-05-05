@@ -1,0 +1,17 @@
+1.  We can use Fragments in 2 ways - <Fragment></Fragment> ( unnamed import from react library ), <></>
+
+2.  Single component is an issue, we should break it into multiple components
+    If the single component is having a state, so when the state changes all the components inside will rerender
+    which can impact the performance.
+
+3.  Any function starting with use is react is hook.
+    useState must be called at top level, cannot be used inside normal function
+    2 rule of Hooks -
+        1. Only call hooks inside component functions.
+        2. Only call hooks at top level, not in condition block or function block.
+
+4. Props Concepts -
+    1. Forwarded Props - using rest operator in Component argument
+    2. Multiple Component Slots - JSX components can be passed as props, it should have 1 root element
+    3. Element identifiers as Props
+    4. Default prop values

@@ -6,20 +6,12 @@ import TabContent from './components/TabContent.jsx'
 import { HOME_DATA } from './data.jsx'
 
 function App() {
-  /**
-   * Any function starting with use is react is hook.
-   * useState must be called at top level, cannot be used inside normal function
-   * 2 rule of Hooks -
-   * 1. Only call hooks inside component functions.
-   * 2. Only call hooks at top level, not in condition block or function block.
-   */
   const [article, setArticle] = useState(null);
 
   const myClickHandler = (type) => {
     // When using setState method it rerenders the component where the state variable (article) exists.
     setArticle(type);
   }
-
   return (
     <>
       <Header>
