@@ -1,3 +1,5 @@
+
+// Props - title, description
 const MyComponent = ({ title, description }) => (
   <div>
     <h3>{title}</h3>
