@@ -15,3 +15,24 @@
     2. Multiple Component Slots - JSX components can be passed as props, it should have 1 root element
     3. Element identifiers as Props
     4. Default prop values
+
+5. use public folder to store public files for site such as images. use just file name to access public files. The public folder will surface
+   to root of the sources.
+   check data.jsx file to understand how static data is stored
+
+6. Even if we create multiple instance of a single component, react will treat each of them as an independent component
+    hence if state changes in one instance it will not affect the other instance of same component.
+
+7. When updating a state based on the prev state, always pass a function in the setState method, this function 
+    will have the oldstate as an argument. React behind the scene schedules the state update functions (setState), hence it
+    is not triggering immediately and can happen after 1-2ms, hence callback is necessary.
+
+8. listening to a change on input an feeding the output to the value of Input is called as Two way binding.
+
+9. If state is array or object, do not mutate it directly rather create a copy and then update.
+    newArray = oldArray ( This will only create a reference) (don't do)
+    newArray = [...oldArray] (This will create a deep copy)
+
+10. State Lifing - Creating the state in parent component and sending the setState and state to child through props
+
+11. Manage as little state as possible by trying to derive data from exisiting state.
